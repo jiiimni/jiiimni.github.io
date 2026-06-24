@@ -28,13 +28,18 @@
     <main>
       <section id="hero" class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Server / Backend Developer</p>
-          <h1>정합성과 흐름을 설계하는 백엔드 개발자, 이지민입니다.</h1>
+          <p class="eyebrow">Java · Spring Boot · Backend</p>
+          <h1>데이터 정합성과 서비스 흐름을 설계합니다.</h1>
           <p class="hero-description">
-            Java와 Spring Boot를 기반으로 API 설계, 데이터 처리, 트랜잭션 경계,
-            동시성 제어를 깊게 다룹니다. 기능 구현을 넘어 왜 그렇게 설계해야
-            하는지 설명할 수 있는 개발자로 성장하고 있습니다.
+            백엔드 개발자 이지민입니다. Java와 Spring Boot를 기반으로 API 설계, 트랜잭션 경계, 동시성 제어,
+            외부 API 장애 대응을 다룹니다. 기능을 구현하는 데서 멈추지 않고
+            설계 선택의 이유와 결과를 테스트와 지표로 확인합니다.
           </p>
+          <div class="hero-highlights" aria-label="핵심 강점">
+            <span>동시성 제어</span>
+            <span>트랜잭션 설계</span>
+            <span>장애 격리</span>
+          </div>
           <div class="hero-actions" aria-label="주요 링크">
             <a class="button primary" href="#projects">프로젝트 보기</a>
             <a class="button secondary" href="https://github.com/jiiimni" target="_blank" rel="noreferrer">
@@ -43,24 +48,35 @@
           </div>
         </div>
 
-        <aside class="hero-panel" aria-label="프로필 요약">
-          <img class="profile-image" src="https://github.com/jiiimni.png" alt="이지민 GitHub 프로필 이미지" />
-          <div>
-            <p class="profile-name">이지민</p>
-            <p class="profile-role">Backend Developer</p>
+        <aside class="system-panel" aria-label="백엔드 역량 요약">
+          <div class="panel-topbar">
+            <span></span>
+            <span></span>
+            <span></span>
+            <p>consistency-check.java</p>
           </div>
+          <pre><code>@Transactional
+public OrderResult order(Long userId) {
+  User user = userRepository
+      .findByIdForUpdate(userId);
+
+  user.pay(orderAmount);
+  Order order = orderRepository.save(snapshot);
+
+  return OrderResult.success(order);
+}</code></pre>
           <dl class="quick-stats">
             <div>
-              <dt>Focus</dt>
-              <dd>Spring Boot, JPA, MySQL</dd>
+              <dt>Race Condition</dt>
+              <dd>잔액 누락률 30% → 0%</dd>
             </div>
             <div>
-              <dt>Strength</dt>
-              <dd>동시성, 트랜잭션, 장애 격리</dd>
+              <dt>External API</dt>
+              <dd>Fallback으로 흐름 차단 방지</dd>
             </div>
             <div>
-              <dt>Blog</dt>
-              <dd><a href="https://velog.io/@jiiim_ni/posts" target="_blank" rel="noreferrer">Velog</a></dd>
+              <dt>Contact</dt>
+              <dd><a href="mailto:dlwlals1003@gmail.com">dlwlals1003@gmail.com</a></dd>
             </div>
           </dl>
         </aside>
