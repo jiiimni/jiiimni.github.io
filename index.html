@@ -49,6 +49,14 @@
         </div>
 
         <aside class="system-panel" aria-label="백엔드 역량 요약">
+          <div class="profile-summary">
+            <img src="./assets/profile.jpg" alt="이지민 프로필 사진" />
+            <div>
+              <p class="profile-name">이지민</p>
+              <p class="profile-role">Server / Backend Developer</p>
+              <a href="mailto:leejimin8951@naver.com">leejimin8951@naver.com</a>
+            </div>
+          </div>
           <div class="panel-topbar">
             <span></span>
             <span></span>
@@ -105,40 +113,94 @@ public OrderResult order(Long userId) {
       <section id="skills" class="section">
         <div class="section-heading">
           <p class="eyebrow">Tech Stacks</p>
-          <h2>주로 사용하는 기술</h2>
+          <h2>프로젝트에서 사용한 기술</h2>
+          <p>
+            결제, 티켓팅, 백오피스, AI 추천 챗봇 프로젝트를 구현하며 사용한 기술을 역할별로 정리했습니다.
+          </p>
         </div>
         <div class="skills-grid">
           <article class="skill-group">
-            <h3>Backend</h3>
+            <h3>Backend Core</h3>
             <ul class="tags">
               <li>Java 17</li>
+              <li>Java 21</li>
               <li>Spring Boot</li>
+              <li>Spring MVC</li>
               <li>Spring Data JPA</li>
               <li>Spring Security</li>
               <li>QueryDSL</li>
-              <li>Spring AI</li>
+              <li>JPA Specification</li>
+              <li>Validation</li>
+              <li>JWT</li>
+              <li>Session Auth</li>
             </ul>
           </article>
           <article class="skill-group">
-            <h3>Database & Infra</h3>
+            <h3>Data & Concurrency</h3>
             <ul class="tags">
               <li>MySQL</li>
               <li>Redis</li>
               <li>Qdrant</li>
-              <li>Docker</li>
-              <li>Nginx</li>
-              <li>AWS</li>
+              <li>Pessimistic Lock</li>
+              <li>Distributed Lock</li>
+              <li>Redisson</li>
+              <li>Caffeine Cache</li>
+              <li>ShedLock</li>
             </ul>
           </article>
           <article class="skill-group">
-            <h3>Frontend & Tools</h3>
+            <h3>AI & Realtime</h3>
             <ul class="tags">
-              <li>React</li>
-              <li>JavaScript</li>
-              <li>Git</li>
+              <li>Spring AI</li>
+              <li>Gemini API</li>
+              <li>Gemini Embedding</li>
+              <li>RAG</li>
+              <li>Tool Calling</li>
+              <li>SSE</li>
+              <li>WebSocket/STOMP</li>
+              <li>Kafka</li>
+            </ul>
+          </article>
+          <article class="skill-group">
+            <h3>Payment & Integration</h3>
+            <ul class="tags">
+              <li>PortOne</li>
+              <li>Toss Payments</li>
+              <li>Webhook Signature</li>
+              <li>OAuth2 Client</li>
+              <li>MapStruct</li>
+              <li>TSID</li>
+              <li>External API Fallback</li>
+            </ul>
+          </article>
+          <article class="skill-group">
+            <h3>Infra & Observability</h3>
+            <ul class="tags">
+              <li>Docker</li>
+              <li>Nginx</li>
+              <li>AWS</li>
+              <li>EC2</li>
+              <li>RDS</li>
+              <li>ElastiCache</li>
+              <li>Micrometer</li>
+              <li>Prometheus</li>
+              <li>Actuator</li>
               <li>GitHub Actions</li>
+            </ul>
+          </article>
+          <article class="skill-group">
+            <h3>Testing & Tools</h3>
+            <ul class="tags">
               <li>JUnit5</li>
               <li>Mockito</li>
+              <li>Awaitility</li>
+              <li>H2</li>
+              <li>ExecutorService Test</li>
+              <li>Gradle</li>
+              <li>Git</li>
+              <li>GitHub</li>
+              <li>React</li>
+              <li>JavaScript</li>
             </ul>
           </article>
         </div>
@@ -334,15 +396,33 @@ public OrderResult order(Long userId) {
       </section>
 
       <section id="contact" class="section contact-section">
-        <div class="section-heading">
-          <p class="eyebrow">Contact</p>
-          <h2>함께 일할 백엔드 개발자를 찾고 계신가요?</h2>
-          <p>
-            프로젝트 코드와 기록을 통해 문제를 정의하고 해결하는 과정을 확인하실 수 있습니다.
-          </p>
+        <div class="contact-layout">
+          <div class="section-heading">
+            <p class="eyebrow">Contact</p>
+            <h2>함께 일할 백엔드 개발자를 찾고 계신가요?</h2>
+            <p>
+              프로젝트 코드와 기록을 통해 문제를 정의하고 해결하는 과정을 확인하실 수 있습니다.
+            </p>
+          </div>
+          <div class="contact-card" aria-label="연락처">
+            <img src="./assets/profile.jpg" alt="이지민 프로필 사진" />
+            <dl>
+              <div>
+                <dt>Phone</dt>
+                <dd><a href="tel:01064586320">010-6458-6320</a></dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd><a href="mailto:leejimin8951@naver.com">leejimin8951@naver.com</a></dd>
+              </div>
+              <div>
+                <dt>Gmail</dt>
+                <dd><a href="mailto:dlwlals1003@gmail.com">dlwlals1003@gmail.com</a></dd>
+              </div>
+            </dl>
+          </div>
         </div>
         <div class="contact-links">
-          <a href="mailto:dlwlals1003@gmail.com">Email</a>
           <a href="https://github.com/jiiimni" target="_blank" rel="noreferrer">GitHub</a>
           <a href="https://velog.io/@jiiim_ni/posts" target="_blank" rel="noreferrer">Velog</a>
           <a href="https://jiiimni.tistory.com/" target="_blank" rel="noreferrer">Tistory</a>

@@ -220,6 +220,47 @@ h4 {
   box-shadow: var(--shadow);
 }
 
+.profile-summary {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  padding: 22px;
+  background:
+    linear-gradient(135deg, rgba(63, 159, 104, 0.08), rgba(47, 127, 195, 0.08)),
+    #fff;
+}
+
+.profile-summary img {
+  width: 104px;
+  height: 124px;
+  border: 1px solid rgba(16, 38, 56, 0.12);
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center 24%;
+  background: #fff;
+  box-shadow: 0 14px 28px rgba(16, 38, 56, 0.12);
+}
+
+.profile-name {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.34rem;
+  font-weight: 950;
+}
+
+.profile-role {
+  margin: 4px 0 10px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.profile-summary a {
+  color: var(--blue);
+  font-size: 0.9rem;
+  font-weight: 850;
+}
+
 .panel-topbar {
   display: flex;
   align-items: center;
@@ -294,6 +335,7 @@ h4 {
 
 .section {
   padding: clamp(72px, 9vw, 120px) clamp(20px, 5vw, 72px);
+  scroll-margin-top: 96px;
 }
 
 .section-heading {
@@ -330,8 +372,8 @@ h4 {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
 }
 
 .skill-group,
@@ -342,7 +384,8 @@ h4 {
 }
 
 .skill-group {
-  padding: 24px;
+  padding: 22px;
+  box-shadow: 0 12px 32px rgba(18, 50, 71, 0.05);
 }
 
 .tags,
@@ -355,7 +398,7 @@ h4 {
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   margin: 18px 0 0;
 }
 
@@ -364,16 +407,17 @@ h4 {
 .result-strip span {
   display: inline-flex;
   align-items: center;
-  min-height: 34px;
+  min-height: 32px;
   border-radius: 8px;
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   font-weight: 800;
 }
 
 .tags li {
-  padding: 0 12px;
+  padding: 0 10px;
   color: var(--navy);
-  background: var(--surface-strong);
+  background: linear-gradient(180deg, #f1f7f5, #e9f2f6);
+  border: 1px solid rgba(16, 38, 56, 0.06);
 }
 
 .projects-section {
@@ -496,7 +540,9 @@ h4 {
 }
 
 .contact-section {
-  background: var(--navy);
+  background:
+    radial-gradient(circle at 82% 18%, rgba(63, 159, 104, 0.28), transparent 30%),
+    linear-gradient(135deg, #102638 0%, #17364b 62%, #112c34 100%);
   color: #fff;
 }
 
@@ -505,9 +551,60 @@ h4 {
   color: #b9d6e6;
 }
 
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 440px);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+}
+
+.contact-card {
+  display: grid;
+  grid-template-columns: 118px minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(10px);
+}
+
+.contact-card img {
+  width: 118px;
+  height: 144px;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center 24%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #fff;
+}
+
+.contact-card dl {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.contact-card dt {
+  color: #a8c9dc;
+  font-size: 0.74rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.contact-card dd {
+  margin: 2px 0 0;
+  font-size: 0.96rem;
+  font-weight: 850;
+  overflow-wrap: anywhere;
+}
+
 .contact-links {
   flex-wrap: wrap;
   gap: 12px;
+  margin-top: 28px;
 }
 
 .contact-links a {
@@ -535,7 +632,8 @@ h4 {
   .hero,
   .project-card,
   .about-grid,
-  .skills-grid {
+  .skills-grid,
+  .contact-layout {
     grid-template-columns: 1fr;
   }
 
@@ -580,5 +678,16 @@ h4 {
   .profile-image {
     width: 104px;
     height: 104px;
+  }
+
+  .profile-summary,
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-summary img,
+  .contact-card img {
+    width: 112px;
+    height: 136px;
   }
 }
