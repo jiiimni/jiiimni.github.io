@@ -580,10 +580,18 @@ h4 {
   font-weight: 800;
 }
 
-.education-card span {
+.education-actions {
   position: absolute;
   right: 22px;
   bottom: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.education-card span,
+.education-card .education-actions a {
   display: inline-flex;
   align-items: center;
   min-height: 32px;
@@ -594,6 +602,12 @@ h4 {
   border: 1px solid rgba(63, 159, 104, 0.2);
   font-size: 0.86rem;
   font-weight: 950;
+}
+
+.education-card .education-actions a {
+  color: var(--navy);
+  background: #fff;
+  border-color: rgba(16, 38, 56, 0.14);
 }
 
 .contact-section {
