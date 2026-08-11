@@ -5,468 +5,243 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="서버/백엔드 개발자 이지민의 포트폴리오. Java, Spring Boot, JPA, Redis, MySQL 기반 프로젝트와 문제 해결 경험을 소개합니다."
+      content="Java와 Spring Boot를 기반으로 결제, 예약, 관리자, AI 추천 기능을 구현하는 백엔드 개발자 이지민의 포트폴리오입니다."
     />
     <title>이지민 | Backend Developer</title>
-    <link rel="preconnect" href="https://github.com" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#hero" aria-label="이지민 포트폴리오 홈">
+      <a class="brand" href="#home" aria-label="이지민 포트폴리오 홈">
         <span class="brand-mark">JM</span>
-        <span>이지민</span>
+        <span class="brand-name">이지민</span>
       </a>
-      <nav class="nav" aria-label="주요 섹션">
+      <nav class="nav" aria-label="주요 메뉴">
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main>
-      <section id="hero" class="hero">
+      <section id="home" class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Java · Spring Boot · Backend</p>
-          <h1>데이터 정합성과 서비스 흐름을 설계합니다.</h1>
+          <p class="eyebrow">Backend Developer</p>
+          <h1>안녕하세요.<br />백엔드 개발자 이지민입니다.</h1>
           <p class="hero-description">
-            백엔드 개발자 이지민입니다. Java와 Spring Boot를 기반으로 API 설계, 트랜잭션 경계, 동시성 제어,
-            외부 API 장애 대응을 다룹니다. 기능을 구현하는 데서 멈추지 않고
-            설계 선택의 이유와 결과를 테스트와 지표로 확인합니다.
+            Java와 Spring Boot를 주로 사용합니다. 새로운 기술은 직접 적용해 보며 익히고,
+            다른 사람이 읽고 수정하기 쉬운 코드를 작성하려고 합니다.
           </p>
-          <div class="hero-highlights" aria-label="핵심 강점">
-            <span>동시성 제어</span>
-            <span>트랜잭션 설계</span>
-            <span>장애 격리</span>
-          </div>
-          <div class="hero-actions" aria-label="주요 링크">
+          <div class="hero-actions">
             <a class="button primary" href="#projects">프로젝트 보기</a>
-            <a class="button secondary" href="https://github.com/jiiimni" target="_blank" rel="noreferrer">
-              GitHub
-            </a>
+            <a class="button secondary" href="https://github.com/jiiimni" target="_blank" rel="noreferrer">GitHub</a>
           </div>
         </div>
 
-        <aside class="system-panel" aria-label="백엔드 역량 요약">
-          <div class="profile-summary">
-            <img src="./assets/profile.jpg" alt="이지민 프로필 사진" />
-            <div>
-              <p class="profile-name">이지민</p>
-              <p class="profile-role">Server / Backend Developer</p>
-              <a href="mailto:leejimin8951@naver.com">leejimin8951@naver.com</a>
-            </div>
+        <aside class="hero-profile" aria-label="개발자 소개">
+          <img src="./assets/profile.jpg" alt="이지민 프로필 사진" />
+          <div>
+            <p class="profile-label">Backend Developer</p>
+            <h2>이지민</h2>
+            <p>Java와 Spring Boot를 중심으로 백엔드를 개발하고 있습니다.</p>
+            <a href="mailto:leejimin8951@naver.com">leejimin8951@naver.com</a>
           </div>
-          <div class="panel-topbar">
-            <span></span>
-            <span></span>
-            <span></span>
-            <p>consistency-check.java</p>
-          </div>
-          <pre><code>@Transactional
-public OrderResult order(Long userId) {
-  User user = userRepository
-      .findByIdForUpdate(userId);
-
-  user.pay(orderAmount);
-  Order order = orderRepository.save(snapshot);
-
-  return OrderResult.success(order);
-}</code></pre>
-          <dl class="quick-stats">
-            <div>
-              <dt>Race Condition</dt>
-              <dd>잔액 누락률 30% → 0%</dd>
-            </div>
-            <div>
-              <dt>External API</dt>
-              <dd>Fallback으로 흐름 차단 방지</dd>
-            </div>
-            <div>
-              <dt>Contact</dt>
-              <dd><a href="mailto:dlwlals1003@gmail.com">dlwlals1003@gmail.com</a></dd>
-            </div>
-          </dl>
         </aside>
       </section>
 
       <section id="about" class="section about-section">
         <div class="section-heading">
           <p class="eyebrow">About Me</p>
-          <h2>서비스가 흔들리지 않도록, 데이터가 흐르는 방식을 먼저 봅니다.</h2>
+          <h2>저에 대해</h2>
         </div>
-        <div class="about-grid">
+        <div class="about-copy">
           <p>
-            백엔드 개발을 배우며 서비스 전반의 흐름을 이해하고자 노력하고 있습니다.
-            다양한 기능 구현 프로젝트를 통해 API 설계와 데이터 처리 경험을 쌓았고,
-            트랜잭션, 락, 캐시, 외부 API 장애 대응처럼 실제 운영에서 문제가 되는 지점을
-            직접 설계하고 검증했습니다.
+            컴퓨터공학을 전공했고, Java와 Spring Boot를 중심으로 백엔드 개발을 공부해 왔습니다.
+            프로젝트에서는 결제, 예약, 관리자 기능과 AI 추천 기능을 맡았습니다.
           </p>
           <p>
-            최근에는 RAG, SSE, Redis 세션 저장소, Qdrant 벡터 검색, 결제 웹훅 검증 등
-            사용자 경험과 안정성을 함께 다루는 백엔드 기능에 집중했습니다. 코드를 짜는
-            것에서 멈추지 않고 테스트와 지표로 결과를 확인하는 습관을 중요하게 생각합니다.
+            처음 사용하는 기술은 바로 프로젝트에 넣기보다 작은 예제로 먼저 동작을 확인합니다.
+            구현한 내용은 나중에 다시 봐도 이해할 수 있도록 정리하고, 필요한 부분에는 테스트를 추가합니다.
           </p>
-        </div>
-      </section>
-
-      <section id="skills" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Tech Stacks</p>
-          <h2>프로젝트에서 사용한 기술</h2>
-          <p>
-            결제, 티켓팅, 백오피스, AI 추천 챗봇 프로젝트를 구현하며 사용한 기술을 역할별로 정리했습니다.
-          </p>
-        </div>
-        <div class="skills-grid">
-          <article class="skill-group">
-            <h3>Backend Core</h3>
-            <ul class="tags">
-              <li>Java 17</li>
-              <li>Java 21</li>
-              <li>Spring Boot</li>
-              <li>Spring MVC</li>
-              <li>Spring Data JPA</li>
-              <li>Spring Security</li>
-              <li>QueryDSL</li>
-              <li>JPA Specification</li>
-              <li>Validation</li>
-              <li>JWT</li>
-              <li>Session Auth</li>
-            </ul>
-          </article>
-          <article class="skill-group">
-            <h3>Data & Concurrency</h3>
-            <ul class="tags">
-              <li>MySQL</li>
-              <li>Redis</li>
-              <li>Qdrant</li>
-              <li>Pessimistic Lock</li>
-              <li>Distributed Lock</li>
-              <li>Redisson</li>
-              <li>Caffeine Cache</li>
-              <li>ShedLock</li>
-            </ul>
-          </article>
-          <article class="skill-group">
-            <h3>AI & Realtime</h3>
-            <ul class="tags">
-              <li>Spring AI</li>
-              <li>Gemini API</li>
-              <li>Gemini Embedding</li>
-              <li>RAG</li>
-              <li>Tool Calling</li>
-              <li>SSE</li>
-              <li>WebSocket/STOMP</li>
-              <li>Kafka</li>
-            </ul>
-          </article>
-          <article class="skill-group">
-            <h3>Payment & Integration</h3>
-            <ul class="tags">
-              <li>PortOne</li>
-              <li>Toss Payments</li>
-              <li>Webhook Signature</li>
-              <li>OAuth2 Client</li>
-              <li>MapStruct</li>
-              <li>TSID</li>
-              <li>External API Fallback</li>
-            </ul>
-          </article>
-          <article class="skill-group">
-            <h3>Infra & Observability</h3>
-            <ul class="tags">
-              <li>Docker</li>
-              <li>Nginx</li>
-              <li>AWS</li>
-              <li>EC2</li>
-              <li>RDS</li>
-              <li>ElastiCache</li>
-              <li>Micrometer</li>
-              <li>Prometheus</li>
-              <li>Actuator</li>
-              <li>GitHub Actions</li>
-            </ul>
-          </article>
-          <article class="skill-group">
-            <h3>Testing & Tools</h3>
-            <ul class="tags">
-              <li>JUnit5</li>
-              <li>Mockito</li>
-              <li>Awaitility</li>
-              <li>H2</li>
-              <li>ExecutorService Test</li>
-              <li>Gradle</li>
-              <li>Git</li>
-              <li>GitHub</li>
-              <li>React</li>
-              <li>JavaScript</li>
-            </ul>
-          </article>
         </div>
       </section>
 
       <section id="projects" class="section projects-section">
         <div class="section-heading wide">
-          <p class="eyebrow">Projects</p>
-          <h2>문제 상황을 기준으로 정리한 프로젝트</h2>
-          <p>
-            각 프로젝트는 구현 기능보다 어떤 문제를 발견했고, 어떤 설계 선택으로 해결했는지를 중심으로 정리했습니다.
-          </p>
+          <p class="eyebrow">Main Projects</p>
+          <h2>참여한 프로젝트</h2>
+          <p>프로젝트별로 맡은 기능과 작업하면서 해결한 문제를 정리했습니다.</p>
         </div>
 
         <div class="project-toolbar" aria-label="프로젝트 필터">
           <button class="filter-button active" type="button" data-filter="all">전체</button>
-          <button class="filter-button" type="button" data-filter="concurrency">동시성</button>
-          <button class="filter-button" type="button" data-filter="payment">결제</button>
           <button class="filter-button" type="button" data-filter="ai">AI</button>
+          <button class="filter-button" type="button" data-filter="payment">결제</button>
+          <button class="filter-button" type="button" data-filter="concurrency">동시성</button>
           <button class="filter-button" type="button" data-filter="admin">관리자</button>
         </div>
 
-        <div class="project-list">
-          <article class="project-card" data-category="ai">
-            <div class="project-main">
-              <p class="project-kicker">For-Pets</p>
-              <h3>반려동물 펫시터 매칭 플랫폼</h3>
-              <p>
-                Gemini, RAG, SSE 기반 AI 시터 추천 챗봇과 리뷰 요약을 제공하는 펫시터 매칭 플랫폼입니다.
-              </p>
-              <ul class="project-meta">
-                <li>1-3개월</li>
-                <li>5명</li>
-                <li>백엔드</li>
-              </ul>
-              <div class="project-links">
-                <a href="https://github.com/Housekeeper-for-pets/for-pets-project" target="_blank" rel="noreferrer">
-                  Repository
-                </a>
-                <a href="https://github.com/Housekeeper-for-pets" target="_blank" rel="noreferrer">Organization</a>
-                <a href="./assets/presentations/forpets-presentation.pdf" target="_blank" rel="noreferrer">포폴자료</a>
+        <div class="featured-projects">
+          <article class="project-card featured" data-category="ai payment">
+            <a class="project-card-link" href="./projects/for-pets.html" aria-label="ForPets 프로젝트 상세 보기">
+              <div class="project-number">01</div>
+              <div class="project-card-body">
+                <p class="project-kicker">ForPets</p>
+                <h3>반려동물 예약 중개 플랫폼</h3>
+                <p>펫시터 예약·결제 흐름과 Gemini, RAG, SSE 기반 AI 시터 추천 및 리뷰 요약 기능을 담당했습니다.</p>
+                <ul class="project-meta">
+                  <li>2026.05 ~ 2026.06</li>
+                  <li>5인 팀</li>
+                  <li>백엔드</li>
+                </ul>
+                <ul class="project-tags" aria-label="주요 기술">
+                  <li>Spring Boot</li><li>Gemini</li><li>Qdrant</li><li>Redis</li><li>SSE</li>
+                </ul>
+                <div class="project-outcome">LLM 응답이 늦거나 실패해도 예약·결제 기능에는 영향을 주지 않도록 분리했습니다.</div>
+                <span class="detail-cta">프로젝트 상세 보기 <span aria-hidden="true">→</span></span>
               </div>
-            </div>
-            <div class="project-detail">
-              <h4>주요 기여</h4>
-              <ul>
-                <li>Qdrant 벡터 DB와 Gemini Embedding을 연동한 RAG 리뷰 검색 파이프라인 설계</li>
-                <li>SSE 스트리밍 응답과 Redis 기반 멀티턴 세션 저장소 구현</li>
-                <li>Gemini 장애 시 fallback, rate limit, timeout, Micrometer 메트릭으로 외부 API 장애 격리</li>
-                <li>Spring AI Tool Calling으로 실제 DB 조회 결과만 추천 후보로 사용하는 구조 적용</li>
-              </ul>
-              <div class="result-strip">
-                <span>첫 청크 0.5초 이하</span>
-                <span>RAG 장애 차단율 0%</span>
-                <span>인덱싱 130건</span>
-              </div>
+            </a>
+            <div class="project-resource-links" aria-label="ForPets 외부 자료">
+              <a href="https://github.com/Housekeeper-for-pets" target="_blank" rel="noreferrer">GitHub</a>
+              <a href="./assets/presentations/forpets-presentation.pdf" target="_blank" rel="noreferrer">포트폴리오 PDF</a>
+              <a href="https://wind-swamp-aae.notion.site/8f5d6f3725378304a32481e0acdf865b" target="_blank" rel="noreferrer">팀 Notion</a>
             </div>
           </article>
 
-          <article class="project-card" data-category="concurrency payment">
-            <div class="project-main">
-              <p class="project-kicker">Ticket JAVARA</p>
-              <h3>공연 티켓팅 플랫폼 백엔드</h3>
-              <p>
-                Redis 분산락과 단계적 캐싱, 결제 웹훅 검증으로 동시성과 검색 성능을 개선한 티켓팅 서비스입니다.
-              </p>
-              <ul class="project-meta">
-                <li>1-4주</li>
-                <li>5명</li>
-                <li>백엔드</li>
-              </ul>
-              <div class="project-links">
-                <a href="https://github.com/6team-Plus-project-sparta/Ticket_JAVARA" target="_blank" rel="noreferrer">
-                  Repository
-                </a>
-                <a href="https://github.com/6team-Plus-project-sparta" target="_blank" rel="noreferrer">Organization</a>
-                <a href="./assets/presentations/ticket-javara-presentation.pdf" target="_blank" rel="noreferrer">발표자료</a>
+          <article class="project-card featured" data-category="payment concurrency">
+            <a class="project-card-link" href="./projects/ticket-javara.html" aria-label="Ticket JAVARA 프로젝트 상세 보기">
+              <div class="project-number">02</div>
+              <div class="project-card-body">
+                <p class="project-kicker">Ticket JAVARA</p>
+                <h3>공연 티켓팅 플랫폼</h3>
+                <p>웹훅 검증, 예매 확정 로직 분리, 쿠폰 상태 전이와 Redis 기반 동시성 제어 흐름을 담당했습니다.</p>
+                <ul class="project-meta">
+                  <li>2026.04 ~ 2026.05</li>
+                  <li>5인 팀</li>
+                  <li>백엔드</li>
+                </ul>
+                <ul class="project-tags" aria-label="주요 기술">
+                  <li>Spring Boot</li><li>Redis</li><li>Toss Payments</li><li>Webhook</li>
+                </ul>
+                <div class="project-outcome">결제 실패·취소 시 HOLD 쿠폰이 AVAILABLE로 돌아가도록 상태를 나눴습니다.</div>
+                <span class="detail-cta">프로젝트 상세 보기 <span aria-hidden="true">→</span></span>
               </div>
-            </div>
-            <div class="project-detail">
-              <h4>주요 기여</h4>
-              <ul>
-                <li>토스페이먼츠 웹훅 signature 검증과 결제 금액 재대조로 위변조 요청 차단</li>
-                <li>예매 확정 책임을 BookingConfirmService로 분리해 트랜잭션 경계와 테스트 가능성 개선</li>
-                <li>쿠폰 상태를 HOLD, USED, AVAILABLE 흐름으로 재설계해 결제 실패 시 복구 보장</li>
-              </ul>
-              <div class="result-strip">
-                <span>웹훅 위변조 차단 100%</span>
-                <span>OrderService 50% 축소</span>
-                <span>확정 테스트 8건</span>
-              </div>
+            </a>
+            <div class="project-resource-links" aria-label="Ticket JAVARA 외부 자료">
+              <a href="https://github.com/6team-Plus-project-sparta" target="_blank" rel="noreferrer">GitHub</a>
+              <a href="./assets/presentations/ticket-javara-presentation.pdf" target="_blank" rel="noreferrer">발표 자료</a>
+              <a href="https://wind-swamp-aae.notion.site/HOT6-90bd6f372537822a8b3c01f9c7a23b39?pvs=73" target="_blank" rel="noreferrer">팀 Notion</a>
             </div>
           </article>
 
-          <article class="project-card" data-category="admin">
-            <div class="project-main">
+          <article class="project-card featured" data-category="payment">
+            <a class="project-card-link" href="./projects/simplepay.html" aria-label="SimplePay 프로젝트 상세 보기">
+              <div class="project-number">03</div>
+              <div class="project-card-body">
+                <p class="project-kicker">7전8기 암시장 · SimplePay</p>
+                <h3>이커머스 결제 시스템</h3>
+                <p>구독 플랜 변경·해지, 주문 시점 상품 정보 스냅샷과 구독 서비스 단위 테스트를 담당했습니다.</p>
+                <ul class="project-meta">
+                  <li>2026.03 ~ 2026.04</li>
+                  <li>5인 팀</li>
+                  <li>백엔드</li>
+                </ul>
+                <ul class="project-tags" aria-label="주요 기술">
+                  <li>Spring Boot</li><li>PortOne</li><li>JPA</li><li>JUnit5</li>
+                </ul>
+                <div class="project-outcome">구독 생성·변경·해지·재구독 흐름을 약 15개의 단위 테스트로 확인했습니다.</div>
+                <span class="detail-cta">프로젝트 상세 보기 <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+            <div class="project-resource-links" aria-label="SimplePay 외부 자료">
+              <a href="https://github.com/no-more-bugs-seven" target="_blank" rel="noreferrer">GitHub</a>
+              <a href="./assets/presentations/simplepay-presentation.pdf" target="_blank" rel="noreferrer">발표 자료</a>
+              <a href="https://wind-swamp-aae.notion.site/7-8-61cd6f3725378244ba16819e0f9d6e12?pvs=73" target="_blank" rel="noreferrer">팀 Notion</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="other-projects-heading">
+          <p class="eyebrow">Other Projects</p>
+          <h3>추가 프로젝트</h3>
+        </div>
+        <div class="other-projects">
+          <article class="project-card compact" data-category="admin">
+            <div class="project-card-body">
               <p class="project-kicker">CommercePilot</p>
-              <h3>E-Commerce Back-office</h3>
-              <p>
-                관리자, 고객, 상품, 주문을 통합 관리하는 이커머스 백오피스 시스템입니다.
-              </p>
-              <ul class="project-meta">
-                <li>1-4주</li>
-                <li>6명</li>
-                <li>백엔드</li>
-              </ul>
-              <div class="project-links">
-                <a href="https://github.com/sprt-team4th-project/first-prj-be" target="_blank" rel="noreferrer">
-                  Repository
-                </a>
-                <a href="https://github.com/sprt-team4th-project" target="_blank" rel="noreferrer">Organization</a>
-                <a href="./assets/presentations/commerce-pilot-presentation.pdf" target="_blank" rel="noreferrer">발표자료</a>
-              </div>
-            </div>
-            <div class="project-detail">
-              <h4>주요 기여</h4>
-              <ul>
-                <li>JPA Specification으로 검색어, 역할, 상태, 정렬, 페이징 조건을 동적으로 결합</li>
-                <li>세션 기반 관리자 인증과 5개 상태별 로그인 차단 정책 구현</li>
-                <li>비밀번호 변경과 프로필 수정 규칙을 Admin 엔티티 메서드로 캡슐화</li>
-              </ul>
-              <div class="result-strip">
-                <span>분기 복잡도 75% 감소</span>
-                <span>상태 커버리지 100%</span>
-                <span>서비스 로직 65% 축소</span>
+              <h3>이커머스 백오피스</h3>
+              <p>관리자 세션 로그인, 상태·역할 관리와 JPA Specification 기반 동적 검색 API를 구현했습니다.</p>
+              <ul class="project-meta"><li>2026.02 ~ 2026.03</li><li>6인 팀</li></ul>
+              <div class="project-resource-links">
+                <a href="https://github.com/sprt-team4th-project" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="./assets/presentations/commerce-pilot-presentation.pdf" target="_blank" rel="noreferrer">발표 자료</a>
               </div>
             </div>
           </article>
 
-          <article class="project-card" data-category="payment">
-            <div class="project-main">
-              <p class="project-kicker">SimplePay</p>
-              <h3>이커머스 결제 시스템</h3>
-              <p>
-                PortOne 연동 일반·정기 결제와 멤버십, 포인트를 통합한 결제 시스템입니다.
-              </p>
-              <ul class="project-meta">
-                <li>1-4주</li>
-                <li>5명</li>
-                <li>백엔드 · 프론트엔드</li>
-              </ul>
-              <div class="project-links">
-                <a href="https://github.com/no-more-bugs-seven/SPARTA_JAVA_SimplePay" target="_blank" rel="noreferrer">
-                  Repository
-                </a>
-                <a href="./assets/presentations/simplepay-presentation.pdf" target="_blank" rel="noreferrer">발표자료</a>
-              </div>
-            </div>
-            <div class="project-detail">
-              <h4>주요 기여</h4>
-              <ul>
-                <li>구독 플랜 변경과 해지의 예약 반영, 즉시 반영 케이스를 분리</li>
-                <li>PlanService와 SubscriptionService 단위 테스트를 작성해 상태 전이 회귀 안전망 구축</li>
-                <li>주문 시점 상품명과 가격을 OrderItem 스냅샷으로 저장해 과거 주문 내역 무결성 보장</li>
-              </ul>
-              <div class="result-strip">
-                <span>반영 지연 즉시 개선</span>
-                <span>테스트 약 15건</span>
-                <span>가격 불일치 0%</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="concurrency payment">
-            <div class="project-main">
+          <article class="project-card compact" data-category="concurrency payment">
+            <div class="project-card-body">
               <p class="project-kicker">Coffee Order API</p>
               <h3>커피숍 포인트·주문 백엔드</h3>
-              <p>
-                다중 서버 환경에서도 포인트 정합성을 보장하는 커피숍 주문 백엔드 API입니다.
-              </p>
-              <ul class="project-meta">
-                <li>1-4주</li>
-                <li>1명</li>
-                <li>백엔드</li>
-              </ul>
-              <div class="project-links">
-                <a href="https://github.com/jiiimni/sparta-spring-CH6" target="_blank" rel="noreferrer">
-                  Repository
-                </a>
-              </div>
-            </div>
-            <div class="project-detail">
-              <h4>주요 기여</h4>
-              <ul>
-                <li>비관적 락과 SELECT FOR UPDATE로 포인트 충전·차감 lost update 문제 해결</li>
-                <li>포인트 차감, 주문 생성, 데이터 전송을 단일 트랜잭션으로 묶어 부분 실패 차단</li>
-                <li>ExecutorService 기반 JUnit 동시성 테스트로 race condition 검증</li>
-              </ul>
-              <div class="result-strip">
-                <span>잔액 누락률 30% → 0%</span>
-                <span>정합성 100%</span>
-                <span>부분 실패 0%</span>
+              <p>비관적 락과 단일 트랜잭션으로 포인트 차감과 주문 생성의 데이터 정합성을 보장했습니다.</p>
+              <ul class="project-meta"><li>2026.04 ~ 2026.05</li><li>1인 프로젝트</li></ul>
+              <div class="metric-inline"><strong>100건</strong> 동시 충전 테스트 · 잔액 누락률 <strong>30% → 0%</strong></div>
+              <div class="project-resource-links">
+                <a href="https://github.com/jiiimni/sparta-spring-CH6" target="_blank" rel="noreferrer">GitHub</a>
               </div>
             </div>
           </article>
         </div>
       </section>
 
-      <section id="education" class="section education-section">
+      <section id="experience" class="section experience-section">
         <div class="section-heading">
-          <p class="eyebrow">Education</p>
-          <h2>학습과 프로젝트 경험의 기반</h2>
-          <p>
-            컴퓨터공학 전공 지식과 실시간 커머스 플랫폼 과정에서의 팀 프로젝트 경험을 바탕으로 백엔드 역량을 쌓았습니다.
-          </p>
+          <p class="eyebrow">Experience & Education</p>
+          <h2>경력 및 교육</h2>
         </div>
-        <div class="education-grid">
-          <article class="education-card">
-            <p class="education-period">2023.03 - 2026.02</p>
-            <h3>제주대학교 공과대학</h3>
-            <p>컴퓨터공학전공</p>
-            <span>졸업</span>
+        <div class="timeline">
+          <article class="timeline-item">
+            <p class="timeline-period">2025.12 ~ 2026.06</p>
+            <div><p class="timeline-type">Training</p><h3>스파르타 내일배움캠프</h3><p>실시간 커머스 플랫폼 개발자 양성 과정 · Java/Spring Boot 기반 팀 프로젝트 4회</p><a href="./assets/certificates/sparta-certificate.pdf" target="_blank" rel="noreferrer">수료증 보기</a></div>
           </article>
-          <article class="education-card">
-            <p class="education-period">2025.12 - 2026.06</p>
-            <h3>스파르타 내일배움캠프</h3>
-            <p>실시간 커머스 플랫폼 개발자 양성 과정</p>
-            <div class="education-actions">
-              <span>수료</span>
-              <a href="./assets/certificates/sparta-certificate.pdf" target="_blank" rel="noreferrer">수료증 보기</a>
-            </div>
+          <article class="timeline-item">
+            <p class="timeline-period">2023.03 ~ 2026.02</p>
+            <div><p class="timeline-type">Education</p><h3>제주대학교</h3><p>컴퓨터공학전공 학사 졸업</p></div>
           </article>
+        </div>
+      </section>
+
+      <section id="skills" class="section skills-section">
+        <div class="section-heading">
+          <p class="eyebrow">Tech Stack</p>
+          <h2>사용 기술</h2>
+        </div>
+        <div class="skills-grid">
+          <article><h3>Backend</h3><p>Java 17/21 · Spring Boot · Spring MVC · Spring Data JPA · QueryDSL · Spring Security</p></article>
+          <article><h3>Data & Concurrency</h3><p>MySQL · Redis · Qdrant · Pessimistic Lock · Redisson · Caffeine Cache</p></article>
+          <article><h3>AI & Realtime</h3><p>Spring AI · Gemini API · RAG · SSE · WebSocket/STOMP · Kafka</p></article>
+          <article><h3>Integration & Test</h3><p>PortOne · Toss Payments · JUnit5 · Mockito · Awaitility · Micrometer</p></article>
+          <article><h3>Infrastructure</h3><p>Docker · Nginx · AWS EC2/RDS/ElastiCache · GitHub Actions · Prometheus</p></article>
         </div>
       </section>
 
       <section id="contact" class="section contact-section">
-        <div class="contact-layout">
-          <div class="section-heading">
-            <p class="eyebrow">Contact</p>
-            <h2>함께 일할 백엔드 개발자를 찾고 계신가요?</h2>
-            <p>
-              프로젝트 코드와 기록을 통해 문제를 정의하고 해결하는 과정을 확인하실 수 있습니다.
-            </p>
-          </div>
-          <div class="contact-card" aria-label="연락처">
-            <img src="./assets/profile.jpg" alt="이지민 프로필 사진" />
-            <dl>
-              <div>
-                <dt>Phone</dt>
-                <dd><a href="tel:01064586320">010-6458-6320</a></dd>
-              </div>
-              <div>
-                <dt>Email</dt>
-                <dd><a href="mailto:leejimin8951@naver.com">leejimin8951@naver.com</a></dd>
-              </div>
-              <div>
-                <dt>Gmail</dt>
-                <dd><a href="mailto:dlwlals1003@gmail.com">dlwlals1003@gmail.com</a></dd>
-              </div>
-            </dl>
-          </div>
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>궁금한 점이 있다면 편하게 연락 주세요.</h2>
         </div>
-        <div class="contact-links">
-          <a href="https://github.com/jiiimni" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://velog.io/@jiiim_ni/posts" target="_blank" rel="noreferrer">Velog</a>
-          <a href="https://jiiimni.tistory.com/" target="_blank" rel="noreferrer">Tistory</a>
-          <a href="https://www.instagram.com/jiiim_ni/" target="_blank" rel="noreferrer">Instagram</a>
+        <div class="contact-list">
+          <a href="mailto:leejimin8951@naver.com"><span>Email</span><strong>leejimin8951@naver.com</strong></a>
+          <a href="tel:01064586320"><span>Phone</span><strong>010-6458-6320</strong></a>
+          <a href="https://github.com/jiiimni" target="_blank" rel="noreferrer"><span>GitHub</span><strong>github.com/jiiimni</strong></a>
+          <a href="https://velog.io/@jiiim_ni/posts" target="_blank" rel="noreferrer"><span>Blog</span><strong>velog.io/@jiiim_ni</strong></a>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <p>© 2026 Jimin Lee. Built for GitHub Pages.</p>
-    </footer>
-
+    <footer class="footer"><p>© 2026 이지민.</p><a href="#home">맨 위로 ↑</a></footer>
     <script src="./script.js"></script>
   </body>
 </html>

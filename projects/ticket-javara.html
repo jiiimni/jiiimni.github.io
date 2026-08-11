@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="이지민의 Ticket JAVARA 공연 티켓팅 플랫폼 프로젝트 상세 기록입니다." />
+    <title>Ticket JAVARA | 이지민 포트폴리오</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="detail-page">
+    <header class="site-header detail-header">
+      <a class="brand" href="../index.html#home" aria-label="이지민 포트폴리오 홈"><span class="brand-mark">JM</span><span class="brand-name">이지민</span></a>
+      <nav class="nav" aria-label="상세 페이지 메뉴"><a href="../index.html#projects">Projects</a><a href="https://github.com/6team-Plus-project-sparta" target="_blank" rel="noreferrer">GitHub</a></nav>
+    </header>
+
+    <main>
+      <section id="overview" class="detail-hero">
+        <p class="eyebrow">Project 02</p>
+        <h1>Ticket JAVARA</h1>
+        <p class="detail-lead">공연 예매, 좌석 선점, 결제, 쿠폰과 실시간 알림 기능을 제공하는 티켓팅 플랫폼 백엔드</p>
+        <div class="detail-meta"><span>2026.04 ~ 2026.05</span><span>5인 팀</span><span>백엔드</span></div>
+        <ul class="detail-tags"><li>Spring Boot</li><li>Redis</li><li>Toss Payments</li><li>Webhook</li><li>Transaction</li></ul>
+        <div class="detail-actions">
+          <a class="button primary" href="https://github.com/6team-Plus-project-sparta" target="_blank" rel="noreferrer">GitHub 저장소</a>
+          <a class="button" href="../assets/presentations/ticket-javara-presentation.pdf" target="_blank" rel="noreferrer">발표 자료</a>
+          <a class="button" href="https://wind-swamp-aae.notion.site/HOT6-90bd6f372537822a8b3c01f9c7a23b39?pvs=73" target="_blank" rel="noreferrer">팀 Notion</a>
+        </div>
+      </section>
+
+      <div class="detail-layout">
+        <aside class="detail-toc" aria-label="프로젝트 목차">
+          <h2>목차</h2>
+          <ol><li><a href="#introduction">프로젝트 소개</a></li><li><a href="#role">담당 역할</a></li><li><a href="#stack">기술 스택</a></li><li><a href="#features">주요 기능</a></li><li><a href="#decisions">문제를 해결한 과정</a></li><li><a href="#result">결과 및 회고</a></li></ol>
+        </aside>
+
+        <article class="detail-content">
+          <section id="introduction" class="detail-section">
+            <h2>1. 프로젝트 소개</h2>
+            <p>5인 팀으로 공연 예매, 좌석 선점, 결제, 쿠폰과 실시간 알림 기능을 제공하는 티켓팅 플랫폼 백엔드를 구현했습니다. 예매·결제 도메인을 담당해 웹훅 검증, 예매 확정 로직 분리, 쿠폰 상태 전이 개선과 Redis 기반 동시성 제어 흐름을 맡았습니다.</p>
+            <p>공개된 웹훅 주소로 위조 요청이 들어오는 경우와 결제 실패 후 쿠폰이 돌아오지 않는 경우를 확인하고, 요청 검증과 쿠폰 복구 흐름을 수정했습니다.</p>
+          </section>
+
+          <section id="role" class="detail-section">
+            <h2>2. 담당 역할</h2>
+            <div class="role-grid">
+              <div class="info-card"><h3>결제 웹훅 검증</h3><p>HandlerInterceptor에서 서명을 검증하고 주문 금액과 PG 결제 금액을 비교했습니다.</p></div>
+              <div class="info-card"><h3>쿠폰 상태 전이</h3><p>HOLD, USED, AVAILABLE 3단계로 선점·확정·복구 흐름을 재설계했습니다.</p></div>
+              <div class="info-card"><h3>예매 확정</h3><p>결제 결과에 따른 예매 확정 책임과 트랜잭션 경계를 분리했습니다.</p></div>
+              <div class="info-card"><h3>동시성 흐름</h3><p>Redis를 활용한 좌석·예매 도메인의 동시 요청 제어 흐름에 참여했습니다.</p></div>
+            </div>
+          </section>
+
+          <section id="stack" class="detail-section">
+            <h2>3. 기술 스택</h2>
+            <div class="stack-row"><strong>Backend</strong>Java 21 · Spring Boot · Spring Data JPA</div>
+            <div class="stack-row"><strong>Data & Concurrency</strong>MySQL · Redis · Distributed Lock</div>
+            <div class="stack-row"><strong>Payment</strong>Toss Payments · Webhook Signature Validation</div>
+            <div class="stack-row"><strong>Test</strong>JUnit5 · Mockito</div>
+          </section>
+
+          <section id="features" class="detail-section">
+            <h2>4. 주요 기능</h2>
+            <div class="feature-grid">
+              <div class="info-card"><h3>공연·좌석 예매</h3><p>공연을 조회하고 좌석을 선점해 예매를 진행하는 흐름을 제공합니다.</p></div>
+              <div class="info-card"><h3>결제 확정</h3><p>PG 결제 결과를 검증한 뒤 예매 상태를 확정합니다.</p></div>
+              <div class="info-card"><h3>쿠폰 선점·복구</h3><p>결제 대기 중 쿠폰을 선점하고 실패·취소 시 사용 가능 상태로 복구합니다.</p></div>
+              <div class="info-card"><h3>실시간 알림</h3><p>예매 흐름에서 발생하는 상태 변경을 사용자에게 전달합니다.</p></div>
+            </div>
+          </section>
+
+          <section id="decisions" class="detail-section">
+            <h2>5. 문제를 해결한 과정</h2>
+            <div class="decision">
+              <h3>웹훅 서명과 결제 금액 이중 검증</h3>
+              <div class="decision-flow">
+                <div class="decision-step"><strong>문제가 된 부분</strong><p>공개된 웹훅 주소에 위조 요청이 들어오면 주문 상태가 잘못 바뀔 수 있었습니다.</p></div>
+                <div class="decision-step"><strong>해결한 방법</strong><p>HandlerInterceptor에서 서명을 먼저 확인하고 주문 금액과 PG 결제 금액을 다시 비교했습니다.</p></div>
+                <div class="decision-step"><strong>확인한 결과</strong><p>서명이나 금액이 다른 요청은 주문 처리 로직에 들어오기 전에 차단됩니다.</p></div>
+              </div>
+            </div>
+            <div class="decision">
+              <h3>쿠폰 상태 전이 재설계</h3>
+              <div class="decision-flow">
+                <div class="decision-step"><strong>문제가 된 부분</strong><p>주문과 동시에 USED 처리하면 결제가 실패했을 때 쿠폰이 돌아오지 않고, 결제 대기 중 중복 사용 가능성도 있었습니다.</p></div>
+                <div class="decision-step"><strong>해결한 방법</strong><p>주문 생성 시 HOLD, 결제 완료 시 USED, 실패·취소 시 AVAILABLE로 바꾸도록 했습니다.</p></div>
+                <div class="decision-step"><strong>확인한 결과</strong><p>결제가 실패해도 쿠폰을 다시 쓸 수 있고, 결제 대기 중에는 같은 쿠폰을 중복으로 사용할 수 없습니다.</p></div>
+              </div>
+            </div>
+          </section>
+
+          <section id="result" class="detail-section">
+            <h2>6. 결과 및 회고</h2>
+            <div class="result-grid">
+              <div class="result-card"><strong>2단계 검증</strong><p>웹훅 서명과 PG 결제 금액을 비즈니스 로직 전후로 검증했습니다.</p></div>
+              <div class="result-card"><strong>3단계 상태</strong><p>HOLD · USED · AVAILABLE로 쿠폰의 선점과 복구를 표현했습니다.</p></div>
+            </div>
+            <p>쿠폰을 사용·미사용 두 상태로만 두면 결제 중인 상태를 정확하게 표현하기 어렵다는 것을 알게 됐습니다. HOLD 상태를 추가하니 결제 실패와 취소 이후의 복구 흐름도 명확해졌습니다. 웹훅 검증은 주문 로직과 분리해 각 코드가 맡는 역할도 단순하게 유지했습니다.</p>
+            <div class="detail-footer-actions"><a class="button primary" href="https://github.com/6team-Plus-project-sparta" target="_blank" rel="noreferrer">GitHub에서 코드 보기</a><a class="button" href="../index.html#projects">다른 프로젝트 보기</a></div>
+          </section>
+        </article>
+      </div>
+    </main>
+    <footer class="footer"><p>© 2026 Jimin Lee.</p><a href="#overview">맨 위로 ↑</a></footer>
+  </body>
+</html>

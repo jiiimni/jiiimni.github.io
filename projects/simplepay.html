@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="이지민의 7전8기 암시장 이커머스 결제 시스템 프로젝트 상세 기록입니다." />
+    <title>SimplePay | 이지민 포트폴리오</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="detail-page">
+    <header class="site-header detail-header">
+      <a class="brand" href="../index.html#home" aria-label="이지민 포트폴리오 홈"><span class="brand-mark">JM</span><span class="brand-name">이지민</span></a>
+      <nav class="nav" aria-label="상세 페이지 메뉴"><a href="../index.html#projects">Projects</a><a href="https://github.com/no-more-bugs-seven" target="_blank" rel="noreferrer">GitHub</a></nav>
+    </header>
+
+    <main>
+      <section id="overview" class="detail-hero">
+        <p class="eyebrow">Project 03</p>
+        <h1>SimplePay</h1>
+        <p class="detail-lead">7전8기 암시장 — PortOne 기반 일반 결제·정기 결제와 주문·구독 상태를 관리하는 이커머스 결제 시스템</p>
+        <div class="detail-meta"><span>2026.03 ~ 2026.04</span><span>5인 팀</span><span>백엔드</span></div>
+        <ul class="detail-tags"><li>Spring Boot</li><li>PortOne</li><li>JPA</li><li>Transaction</li><li>JUnit5</li></ul>
+        <div class="detail-actions">
+          <a class="button primary" href="https://github.com/no-more-bugs-seven" target="_blank" rel="noreferrer">GitHub 저장소</a>
+          <a class="button" href="../assets/presentations/simplepay-presentation.pdf" target="_blank" rel="noreferrer">발표 자료</a>
+          <a class="button" href="https://wind-swamp-aae.notion.site/7-8-61cd6f3725378244ba16819e0f9d6e12?pvs=73" target="_blank" rel="noreferrer">팀 Notion</a>
+        </div>
+      </section>
+
+      <div class="detail-layout">
+        <aside class="detail-toc" aria-label="프로젝트 목차">
+          <h2>목차</h2>
+          <ol><li><a href="#introduction">프로젝트 소개</a></li><li><a href="#role">담당 역할</a></li><li><a href="#stack">기술 스택</a></li><li><a href="#features">주요 기능</a></li><li><a href="#decisions">문제를 해결한 과정</a></li><li><a href="#result">결과 및 회고</a></li></ol>
+        </aside>
+
+        <article class="detail-content">
+          <section id="introduction" class="detail-section">
+            <h2>1. 프로젝트 소개</h2>
+            <p>5인 팀으로 PortOne 기반 일반 결제·정기 결제 시스템을 구현했습니다. 구독 도메인과 주문 도메인을 담당하며 구독 플랜 변경·해지 로직, 주문 시점 상품 정보 스냅샷 저장과 구독 서비스 단위 테스트를 맡았습니다.</p>
+            <p>무료 플랜 전환이나 즉시 해지가 필요한 경우에는 바로 반영되도록 구독 조건을 나눴습니다. 상품 정보가 바뀌어도 과거 주문 내역에는 결제 당시 정보가 남도록 저장 방식도 수정했습니다.</p>
+          </section>
+
+          <section id="role" class="detail-section">
+            <h2>2. 담당 역할</h2>
+            <div class="role-grid">
+              <div class="info-card"><h3>구독 플랜 변경</h3><p>플랜과 구독 상태에 따라 예약 변경과 즉시 변경을 구분했습니다.</p></div>
+              <div class="info-card"><h3>구독 해지</h3><p>다음 결제일 해지와 즉시 해지가 필요한 케이스를 분리했습니다.</p></div>
+              <div class="info-card"><h3>주문 스냅샷</h3><p>OrderItem에 주문 당시 상품명과 가격을 저장했습니다.</p></div>
+              <div class="info-card"><h3>단위 테스트</h3><p>구독 생성·변경·해지·재구독 상태 전이를 테스트로 검증했습니다.</p></div>
+            </div>
+          </section>
+
+          <section id="stack" class="detail-section">
+            <h2>3. 기술 스택</h2>
+            <div class="stack-row"><strong>Backend</strong>Java · Spring Boot · Spring Data JPA</div>
+            <div class="stack-row"><strong>Data</strong>MySQL · JPA Entity State Transition</div>
+            <div class="stack-row"><strong>Payment</strong>PortOne · General Payment · Recurring Payment</div>
+            <div class="stack-row"><strong>Test</strong>JUnit5 · Mockito</div>
+          </section>
+
+          <section id="features" class="detail-section">
+            <h2>4. 주요 기능</h2>
+            <div class="feature-grid">
+              <div class="info-card"><h3>일반 결제</h3><p>주문을 생성하고 PortOne을 통해 결제하는 흐름을 제공합니다.</p></div>
+              <div class="info-card"><h3>정기 결제</h3><p>구독 플랜과 결제 주기에 따라 정기 결제 상태를 관리합니다.</p></div>
+              <div class="info-card"><h3>구독 관리</h3><p>플랜 변경, 해지와 재구독에 따른 상태 전이를 처리합니다.</p></div>
+              <div class="info-card"><h3>주문 내역</h3><p>결제 당시의 상품명과 금액을 유지해 과거 주문을 정확히 보여줍니다.</p></div>
+            </div>
+          </section>
+
+          <section id="decisions" class="detail-section">
+            <h2>5. 문제를 해결한 과정</h2>
+            <div class="decision">
+              <h3>예약 반영과 즉시 반영 분리</h3>
+              <div class="decision-flow">
+                <div class="decision-step"><strong>문제가 된 부분</strong><p>모든 플랜 변경·해지가 다음 결제일까지 대기해 무료 전환과 즉시 해지도 늦게 반영됐습니다.</p></div>
+                <div class="decision-step"><strong>해결한 방법</strong><p>구독 상태와 플랜 종류에 따라 예약 변경과 즉시 변경·해지를 나눴습니다.</p></div>
+                <div class="decision-step"><strong>확인한 결과</strong><p>즉시 해지가 필요한 사용자는 다음 결제일까지 기다리지 않아도 됩니다.</p></div>
+              </div>
+            </div>
+            <div class="decision">
+              <h3>주문 시점 상품 정보 스냅샷</h3>
+              <div class="decision-flow">
+                <div class="decision-step"><strong>문제가 된 부분</strong><p>주문 후 상품명이나 가격이 바뀌면 과거 주문 내역까지 현재 정보로 보일 수 있었습니다.</p></div>
+                <div class="decision-step"><strong>해결한 방법</strong><p>OrderItem에 productName과 productPrice를 주문 생성 시점 값으로 저장했습니다.</p></div>
+                <div class="decision-step"><strong>확인한 결과</strong><p>상품 정보가 바뀌어도 주문 내역에는 결제 당시 상품명과 가격이 남습니다.</p></div>
+              </div>
+            </div>
+            <div class="decision">
+              <h3>구독 상태 전이 회귀 테스트</h3>
+              <div class="decision-flow">
+                <div class="decision-step"><strong>문제가 된 부분</strong><p>상태와 플랜 조합이 늘수록 한쪽의 변경이 다른 구독 흐름을 깨뜨릴 수 있었습니다.</p></div>
+                <div class="decision-step"><strong>확인한 방법</strong><p>생성·플랜 변경·해지·재구독을 각각 단위 테스트로 작성했습니다.</p></div>
+                <div class="decision-step"><strong>확인한 결과</strong><p>약 15개의 테스트로 주요 상태 전이가 예상대로 동작하는지 확인했습니다.</p></div>
+              </div>
+            </div>
+          </section>
+
+          <section id="result" class="detail-section">
+            <h2>6. 결과 및 회고</h2>
+            <div class="result-grid">
+              <div class="result-card"><strong>약 15건</strong><p>구독 생성·변경·해지·재구독 단위 테스트를 작성했습니다.</p></div>
+              <div class="result-card"><strong>주문 시점 보존</strong><p>상품 변경 이후에도 과거 주문의 상품명과 결제 금액을 유지했습니다.</p></div>
+            </div>
+            <p>구독을 구현하면서 활성·비활성 두 값만으로는 플랜 변경과 해지 시점을 표현하기 어렵다는 것을 알게 됐습니다. 주문 내역도 현재 상품 정보만 바라보게 하면 과거 기록이 달라질 수 있어, 결제 당시의 상품명과 가격을 따로 남겼습니다.</p>
+            <div class="detail-footer-actions"><a class="button primary" href="https://github.com/no-more-bugs-seven" target="_blank" rel="noreferrer">GitHub에서 코드 보기</a><a class="button" href="../index.html#projects">다른 프로젝트 보기</a></div>
+          </section>
+        </article>
+      </div>
+    </main>
+    <footer class="footer"><p>© 2026 Jimin Lee.</p><a href="#overview">맨 위로 ↑</a></footer>
+  </body>
+</html>
